@@ -1,0 +1,30 @@
+.box-center{
+    margin-top: 120px;
+    width: 60%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 12px;
+}
+.pointer{
+    cursor: pointer!important;
+}
+.circle{
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    opacity: 0.7;
+    background-color:#10dc94;
+}
+
+.left-shadow{
+    /* background-color: red; */
+    box-shadow: 4px 0px 3px -4px #888;
+}
+.list-hover:hover{
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.no-outline{
+    outline: none;
+}
