@@ -12,7 +12,7 @@
                     <li *ngFor="let item of noteData?.data; let i = index" class="list-group-item rounded"
                         [class.list-hover]="item.id!=currentNote.id"
                         [class.active]="item.id == currentNote.id && !newTaskMode"
-                        (click)="this.currentNote = item; this.currentNote.index = i; this.newTaskMode = false">
+                        (click)="this.currentNote = item; this.newTaskMode = false">
                         {{ item.title }}</li>
                     <li class="list-group-item"></li>
                 </ul>
@@ -83,7 +83,7 @@
                     <button [disabled]="this.newNote?.title=='' || this.newNote?.description==''"
                         class="m-2 w-25 no-outline" (click)="insertNote()" mat-button color="primary">Save</button>
                     <button [disabled]="this.noteData.data.length == 0" class="m-2 w-25 no-outline"
-                        (click)="newTaskMode = false; this.currentNote = noteData.data[0]; this.currentNote.index = 0"
+                        (click)="newTaskMode = false; this.currentNote = noteData.data[0];"
                         mat-button color="warn">Cancel</button>
 
                 </div>

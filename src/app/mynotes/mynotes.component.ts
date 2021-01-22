@@ -34,7 +34,7 @@ export class MynotesComponent implements OnInit {
       }
       else{
         this.currentNote = this.noteData.data[0];
-        this.currentNote.index = 0;
+        // this.currentNote.index = 0;
       }
     }
     else{
@@ -66,21 +66,27 @@ export class MynotesComponent implements OnInit {
     localStorage.setItem('noteData',JSON.stringify(this.noteData));
 
     this.currentNote = this.noteData.data[this.noteData.data.length - 1];
-    this.currentNote.index = this.noteData.data.length - 1;
+    // this.currentNote.index = this.noteData.data.length - 1;
     this.newTaskMode = false;
+
+    
   }
 
 
   removeNote(){
-    if(this.currentNote.index != 0){
-      this.currentNote = this.noteData.data[this.currentNote.index-1];
-      this.noteData.data.splice(this.currentNote.index,1);
-    }
-    else{
-      this.noteData.data = [];
-      this.openNewNote();
-    }
-    localStorage.setItem('noteData',JSON.stringify(this.noteData));
+    this.noteData.data = this.noteData.data.filter((note) => {
+      return note.id !== this.currentNote.id;
+    })
+    this.openNewNote();
+    // if(this.currentNote.index != 0){
+    //   this.noteData.data.splice(this.currentNote.index,1);
+    //   this.currentNote = this.noteData.data[this.currentNote.index-1];
+    // }
+    // else{
+
+    // }
+    // localStorage.setItem('noteData',JSON.stringify(this.noteData));
+    // this.openNewNote();
   }
 
   getStringTime(time){
