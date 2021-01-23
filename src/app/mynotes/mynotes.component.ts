@@ -77,7 +77,6 @@ export class MynotesComponent implements OnInit {
     this.noteData.data = this.noteData.data.filter((note) => {
       return note.id !== this.currentNote.id;
     })
-    this.openNewNote();
     // if(this.currentNote.index != 0){
     //   this.noteData.data.splice(this.currentNote.index,1);
     //   this.currentNote = this.noteData.data[this.currentNote.index-1];
@@ -85,8 +84,8 @@ export class MynotesComponent implements OnInit {
     // else{
 
     // }
-    // localStorage.setItem('noteData',JSON.stringify(this.noteData));
-    // this.openNewNote();
+    localStorage.setItem('noteData',JSON.stringify(this.noteData));
+    this.openNewNote();
   }
 
   getStringTime(time){
